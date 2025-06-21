@@ -17,21 +17,25 @@
       color: #fff;
     }
 
-    /* ✅ Copied from index.html exactly */
+    /* Exact Header CSS from index.html */
     header {
-      width: 100%;
       background-color: #091621;
       padding: 15px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       box-shadow: 0 0 10px #00e5ff44;
     }
 
-    header .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
+    header .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
       color: #00e5ff;
+      font-weight: 900;
+      font-size: 1.8rem;
     }
 
     nav a {
@@ -153,18 +157,18 @@
 </head>
 <body>
 
-  <!-- ✅ Exact Header From Index Page -->
   <header>
-    <div class="logo">The GameClub</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="bonuses.html">Bonuses</a>
-      <a href="rewards.html" class="active">Rewards</a>
-      <a href="leaderboard.html">Leaderboard</a>
-    </nav>
+    <div class="container">
+      <h1>The GameClub</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="bonuses.html">Bonuses</a>
+        <a href="rewards.html" class="active">Rewards</a>
+        <a href="leaderboard.html">Leaderboard</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- ✅ Main Content -->
   <div class="container">
     <h2>VIP Rewards</h2>
     <div class="grid">
@@ -224,7 +228,6 @@
     </div>
   </div>
 
-  <!-- ✅ Modal -->
   <div class="modal" id="popupModal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
