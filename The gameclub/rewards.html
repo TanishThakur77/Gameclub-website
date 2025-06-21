@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The GameClub - Rewards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #0a1a2a;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+    }
+
+    /* ✅ Copied from index.html exactly */
+    header {
+      width: 100%;
+      background-color: #091621;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 10px #00e5ff44;
+    }
+
+    header .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #00e5ff;
+    }
+
+    nav a {
+      color: #00e5ff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #00cfff;
+      border-bottom: 2px solid #00e5ff;
+      padding-bottom: 4px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #00e5ff;
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: #112b44;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 0 15px #001f33;
+      transition: 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 25px #00e5ff88;
+    }
+
+    .tier-name {
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .reward-amount {
+      font-size: 1.8rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+      color: #00e5ff;
+    }
+
+    .req-btn {
+      margin-top: 10px;
+      background: transparent;
+      color: #00e5ff;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      text-decoration: underline;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+    }
+
+    .modal-content {
+      background: #112b44;
+      margin: 12% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      color: #00e5ff;
+      box-shadow: 0 0 20px #00e5ff66;
+      position: relative;
+    }
+
+    .close {
+      color: #fff;
+      font-size: 22px;
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    .modal-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.6rem;
+    }
+
+    .bronze { border-top: 5px solid #cd7f32; }
+    .silver { border-top: 5px solid #c0c0c0; }
+    .gold { border-top: 5px solid #ffd700; }
+    .plat { border-top: 5px solid #00e5ff; }
+    .diamond { border-top: 5px solid #b9f2ff; }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Exact Header From Index Page -->
+  <header>
+    <div class="logo">The GameClub</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="bonuses.html">Bonuses</a>
+      <a href="rewards.html" class="active">Rewards</a>
+      <a href="leaderboard.html">Leaderboard</a>
+    </nav>
+  </header>
+
+  <!-- ✅ Main Content -->
+  <div class="container">
+    <h2>VIP Rewards</h2>
+    <div class="grid">
+      <div class="card bronze">
+        <div class="tier-name">Bronze</div>
+        <div class="reward-amount">$10</div>
+        <button class="req-btn" onclick="openModal('Bronze', '$10,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card silver">
+        <div class="tier-name">Silver</div>
+        <div class="reward-amount">$20</div>
+        <button class="req-btn" onclick="openModal('Silver', '$50,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card gold">
+        <div class="tier-name">Gold</div>
+        <div class="reward-amount">$35</div>
+        <button class="req-btn" onclick="openModal('Gold', '$100,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card plat">
+        <div class="tier-name">Plat 1</div>
+        <div class="reward-amount">$70</div>
+        <button class="req-btn" onclick="openModal('Plat 1', '$250,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card plat">
+        <div class="tier-name">Plat 2</div>
+        <div class="reward-amount">$140</div>
+        <button class="req-btn" onclick="openModal('Plat 2', '$500,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card plat">
+        <div class="tier-name">Plat 3</div>
+        <div class="reward-amount">$260</div>
+        <button class="req-btn" onclick="openModal('Plat 3', '$750,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card plat">
+        <div class="tier-name">Plat 4</div>
+        <div class="reward-amount">$520</div>
+        <button class="req-btn" onclick="openModal('Plat 4', '$1,000,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card plat">
+        <div class="tier-name">Plat 5</div>
+        <div class="reward-amount">$1,040</div>
+        <button class="req-btn" onclick="openModal('Plat 5', '$2,500,000 wager required')">Requirements</button>
+      </div>
+
+      <div class="card diamond">
+        <div class="tier-name">Diamond</div>
+        <div class="reward-amount">$5,000</div>
+        <button class="req-btn" onclick="openModal('Diamond', '$25,000,000 wager required')">Requirements</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ Modal -->
+  <div class="modal" id="popupModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h3 id="modal-tier">Tier</h3>
+      <p id="modal-text">Wager requirement...</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(tier, requirement) {
+      document.getElementById('modal-tier').textContent = tier + ' Tier';
+      document.getElementById('modal-text').textContent = requirement;
+      document.getElementById('popupModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('popupModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('popupModal')) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
