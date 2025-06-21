@@ -1,0 +1,200 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0a1a2a; /* dark navy */
+  color: #e0f7fa; /* light cyan-ish white */
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: #112b44; /* navy shade */
+  padding: 20px 0;
+  border-bottom: 2px solid #33c9dc; /* bright cyan */
+}
+
+header h1 {
+  float: left;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #33c9dc;
+}
+
+header nav {
+  float: right;
+}
+
+header nav a {
+  color: #a5d8dd; /* lighter cyan */
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+header nav a:hover,
+header nav a.active {
+  color: #00e5ff; /* bright cyan */
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Main Sections */
+h2 {
+  margin-bottom: 20px;
+  color: #00e5ff;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+/* Promo Cards */
+.promo-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.promo-card {
+  background: #112b44;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 280px;
+  box-shadow: 0 0 10px #001f33;
+  transition: box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  box-shadow: 0 0 20px #00e5ff;
+}
+
+.promo-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  color: #33c9dc;
+}
+
+.promo-card p {
+  margin-bottom: 10px;
+}
+
+.code {
+  background: #00e5ff;
+  color: #0a1a2a;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: 700;
+  display: inline-block;
+  font-family: monospace;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: #00e5ff;
+  color: #0a1a2a;
+  padding: 10px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #00bcd4;
+}
+
+/* Rewards Section */
+.rewards-section {
+  background: #00e5ff;
+  color: #0a1a2a;
+  padding: 30px 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 40px 0;
+}
+
+.rewards-section p {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+
+/* Leaderboard Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 50px;
+}
+
+thead {
+  background: #00e5ff;
+  color: #0a1a2a;
+}
+
+th, td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #00394d;
+}
+
+tbody tr:hover {
+  background: #00394d;
+}
+
+/* Footer */
+footer {
+  background: #112b44;
+  color: #a5d8dd;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid #33c9dc;
+}
+
+.social-links {
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #a5d8dd;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00e5ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1, header nav {
+    float: none;
+    text-align: center;
+  }
+
+  header nav a {
+    margin: 0 10px;
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  .promo-cards {
+    flex-direction: column;
+  }
+}
